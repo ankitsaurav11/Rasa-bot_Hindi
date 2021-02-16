@@ -1,0 +1,63 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - greet
+  - goodbye
+  - thanks
+  - affirm
+  - deny
+  - lang_search
+entities:
+  - language
+# slots:
+#   email:
+#     type: unfeaturized
+#     influence_conversation: false
+responses:
+  utter_greet:
+  - text: |
+      अस्सलाम ओ अलैकुम! मैं तुम्हारी मदद कैसे कर सकता हूं?
+  - text: |
+      Hi!
+  - text: |
+      अरे! मेरे द्वारा आपके लिए क्या किया जा सकता है?  
+  utter_goodbye:
+  - text: |
+      फिर मिलेंगे!
+  - text: |
+      आप से बात करके अछा लगा।
+  - text: |
+      फिर मिलेंगे!
+  utter_thanks:
+  - text: |
+      खुशी है कि मैं मदद की हो सकती है!
+  - text: |
+      धन्यवाद!
+  - text: |
+      मदद करने के लिए खुश :) 
+  utter_feedback_pos:
+  - text: |
+      मैं आभारी हूं कि मैं आपके लिए उपयोगी हूं
+  - text: |
+      मैं सेवा करने के लिए मौजूद हूं
+  utter_feedback_neg:
+  - text: |
+      मैं अपने आप में निराश हूं कि मैं मदद नहीं कर सका।
+  - text: |
+      मैं अपने उद्देश्यों की सेवा के लिए मौजूद हूं और मैं असफल रहा
+
+actions:
+- '...'
+- utter_greet
+- utter_goodbye
+- action_lang_search
+- utter_thanks
+- utter_feedback_pos
+- utter_feedback_neg
+# - utter_subscribed
+# forms:
+#   newsletter_form:
+#     email:
+#     - type: from_text
